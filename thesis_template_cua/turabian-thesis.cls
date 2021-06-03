@@ -229,7 +229,7 @@
 	\fi}
 
 % Chapter: formatting
-\def\tf@chapformat{\normalfont\bfseries\normalsize\singlespacing\centering}
+\def\tf@chapformat{\normalfont\bfseries\huge\singlespacing\centering}
 
 \newlength\tf@adjafterchapskip
 \setlength\tf@adjafterchapskip{\z@}

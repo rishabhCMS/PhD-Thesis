@@ -22,7 +22,7 @@ The Compact Muon Solenoid (CMS) is a general purpose detector located in eastern
 The CMS detector is cylindrical shaped with an onion like structure, having several concentric layers of subsystems. These subsystems help prepare "photographic images" of each collision event by determining the properties of the particles in the collision. CMS has the following basic subsystems ordered from innermost to outermost:
 
 \begin{enumerate}
-    \item Silicon Tracker
+    \item Silicon Tracking Detector
     \item Electromagnetic Calorimeter
     \item Hadronic Calorimeter
     \item Superconducting Solenoid Magnet
@@ -39,17 +39,52 @@ The CMS detector can detect 5 general categories of particles as shown in the fi
     \item Muons
 \end{enumerate}
 
-\begin{figure} [ht]
+\begin{figure} [tpb]
 \centering
          \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/CMSSlice.png}
+         \vspace*{10mm}
          \caption[#CMS Slice]{This Figure shows the cross-sectional slice of the CMS detector. Here we have shown the different sub-systems of CMS, trajectories and energy deposits of the 5 general categories of particles detected by CMS by one or more of its sub-systems}
-         \label{cms_slice}
+         \label{cms:slice}
 \end{figure}
 %More ideas that really make this a great paper. Maybe a footnote or two.\footnote{Some peripheral thoughts that belong in a note.}
 \subsection{Coordinate System}
+The definition of a coordinate system is very crucial in quantifying the position of a particle inside CMS with respect to its center. The coordinate system at CMS is defined as follows and illustrated in Figure \Fig~\ref{cms:coordinate} -- the origin is defined as the nominal pp collision point,  the  $x$-axis points inwards towards the center of the LHC ring, the $y$-axis points upwards perpendicular to the $x$-axis and the $z$-axis points in the counter-clockwise beam direction. However, in hadron collider physics a more traditional coordinate, pseudo-rapidity $\eta$ is used, defined as
+
+\begin{equation}
+  \eta = -\ln\tan\left(\frac{\theta}{2}\right)
+  \label{eq:eta}
+\end{equation}
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/coord.png}
+         \vspace*{10mm}
+         \caption[#CMS Coordinate System]{This Figure shows the coordinate system used by the CMS detector adapted from ~\cite{Perez:coordinate}, illustrating the $x$-axis, $y$-axis, $z$-axis, radial angle $\theta$ (measured wrt to the $z$-axis and the azimuthal angle $\phi$ (measured in $x$-$y$ plane from the $x$-axis).}
+         \label{cms:coordinate}
+\end{figure}
+
+For a particle of three-momentum $\textbf{p}$ with $z$-component $p_z$, pseudorapidity can be written as
+\begin{equation}
+  \eta = \frac12\ln\left(\frac{|\textbf{p}|+p_z}{|\textbf{p}|-p_z}\right)
+  \label{eq:eta_p}
+\end{equation}
+In the limit of relativistic particles (high velocity and low mass limit), the pseudo-rapidity approximates the rapidity y given by
+\begin{equation}
+  y = \frac12\ln\left(\frac{E+p_z}{E-p_z}\right),
+  \label{eq:rap}
+\end{equation}
+The rapidity is invariant under Lorentz boost transformations and is only dependent on the polar angle $\theta$ and not on the energy of the particle. From Figure \Fig~\ref{cms:rapidity}, we see that higher values of $\eta$ correspond to low values of $\theta$, this region is also referred as "forward" or high $\eta$ regions. In Figure \Fig~\ref{cms:rapidity}, we observe two regions which cover approximately  $|\eta| < 1.2$ and $1.2 <|\eta|  < 3$, these regions are known as the barrel and the endcap respectively.
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/rapidity.png}
+         \vspace*{10mm}
+         \caption[#CMS Rapidity distribution]{This Figure shows one quadrant of CMS in the $r-z$ plane adapted from \cite{lee:rapidity}, illustrating the positions of subsystems in barrel and endcap regions}
+         \label{cms:rapidity}
+\end{figure}
 
 
-\subsection{Silicon Tracker}
+\subsection{Silicon Tracking Detector}
 
 \subsection{Electromagnetic Calorimeter}
 
