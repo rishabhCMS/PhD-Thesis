@@ -5,7 +5,7 @@
 The Large Hadron Collider (LHC) is the world’s largest and most powerful particle accelerator. Inside the accelerator, two highly energetic proton beams collide up to a center-of-mass energy of 14 TeV. The LHC is constructed inside a 27 km tunnel, 100 m under the ground, located partly in Switzerland and France.
 
 At the LHC two energetic proton beams travel in opposite directions in separate beam pipes. The proton beams travel in bunches separated by 25 ns in time. The beams travel at relativistic speeds and collide at four major interaction points at the LHC. The LHC has four main detector experiments at each interaction point: ALICE (A Large Ion Collider Experiment), ATLAS (A Toroidal LHC Apparatus), CMS (Compact Muon Solenoid), and LHCb (Large Hadron Collider beauty). ATLAS and CMS are general purpose-detectors with broad physics objectives ranging from studying the Standard Model to searching Beyond Standard Model (BSM) physics such as Dark Matter. While ALICE and LHCb are more physics dedicated detectors, ALICE and LHCb are dedicated to heavy-ion physics and studying b-quark physics respectively.
-
+\subsection{LHC Computing Grid}
 %\begin{quotation}
 %    \noindent Here is a block quotation---a passage from a text you found insightful and wanted to share with others. Maybe it is from a %journal article, website, or book. Irrespective, it should support the argument being made.\footnote{A citation for the quoted material.}
 %\end{quotation}
@@ -43,12 +43,12 @@ The CMS detector can detect 5 general categories of particles as shown in the fi
 \centering
          \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/CMSSlice.png}
          \vspace*{10mm}
-         \caption[#CMS Slice]{This Figure shows the cross-sectional slice of the CMS detector. Here we have shown the different sub-systems of CMS, trajectories and energy deposits of the 5 general categories of particles detected by CMS by one or more of its sub-systems}
+         \caption[CMS Slice]{This Figure shows the cross-sectional slice of the CMS detector. Here we have shown the different sub-systems of CMS, trajectories and energy deposits of the 5 general categories of particles detected by CMS by one or more of its sub-systems}
          \label{cms:slice}
 \end{figure}
 %More ideas that really make this a great paper. Maybe a footnote or two.\footnote{Some peripheral thoughts that belong in a note.}
 \subsection{Coordinate System}
-The definition of a coordinate system is very crucial in quantifying the position of a particle inside CMS with respect to its center. The coordinate system at CMS is defined as follows and illustrated in Figure \Fig~\ref{cms:coordinate} -- the origin is defined as the nominal pp collision point,  the  $x$-axis points inwards towards the center of the LHC ring, the $y$-axis points upwards perpendicular to the $x$-axis and the $z$-axis points in the counter-clockwise beam direction. However, in hadron collider physics a more traditional coordinate, pseudo-rapidity $\eta$ is used, defined as
+The definition of a coordinate system is very crucial in quantifying the position of a particle inside CMS with respect to the origin. The coordinate system at CMS is defined as follows and illustrated in Figure \ref{cms:coordinate} -- the origin is defined as the nominal pp collision point,  the  $x$-axis points inwards towards the center of the LHC ring, the $y$-axis points upwards perpendicular to the $x$-axis and the $z$-axis points in the counter-clockwise beam direction. However, in hadron collider physics a more traditional coordinate, pseudo-rapidity $\eta$ is used, defined as
 
 \begin{equation}
   \eta = -\ln\tan\left(\frac{\theta}{2}\right)
@@ -59,7 +59,7 @@ The definition of a coordinate system is very crucial in quantifying the positio
 \centering
          \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/coord.png}
          \vspace*{10mm}
-         \caption[#CMS Coordinate System]{This Figure shows the coordinate system used by the CMS detector adapted from ~\cite{Perez:coordinate}, illustrating the $x$-axis, $y$-axis, $z$-axis, radial angle $\theta$ (measured wrt to the $z$-axis and the azimuthal angle $\phi$ (measured in $x$-$y$ plane from the $x$-axis).}
+         \caption[CMS Coordinate System]{This Figure shows the coordinate system used by the CMS detector adapted from ~\citep{Perez:coordinate}, illustrating the $x$-axis, $y$-axis, $z$-axis, radial angle $\theta$ (measured wrt to the $z$-axis and the azimuthal angle $\phi$ (measured in $x$-$y$ plane from the $x$-axis).}
          \label{cms:coordinate}
 \end{figure}
 
@@ -73,18 +73,58 @@ In the limit of relativistic particles (high velocity and low mass limit), the p
   y = \frac12\ln\left(\frac{E+p_z}{E-p_z}\right),
   \label{eq:rap}
 \end{equation}
-The rapidity is invariant under Lorentz boost transformations and is only dependent on the polar angle $\theta$ and not on the energy of the particle. From Figure \Fig~\ref{cms:rapidity}, we see that higher values of $\eta$ correspond to low values of $\theta$, this region is also referred as "forward" or high $\eta$ regions. In Figure \Fig~\ref{cms:rapidity}, we observe two regions which cover approximately  $|\eta| < 1.2$ and $1.2 <|\eta|  < 3$, these regions are known as the barrel and the endcap respectively.
+The rapidity is invariant under Lorentz boost transformations and is only dependent on the polar angle $\theta$ and not on the energy of the particle. From Figure \ref{cms:rapidity}, we see that higher values of $\eta$ correspond to low values of $\theta$, this region is also referred as "forward" or high $\eta$ regions. In Figure \ref{cms:rapidity}, we observe two regions which cover approximately  $|\eta| < 1.2$ and $1.2 <|\eta|  < 3$, these regions are known as the barrel and the endcap respectively.
 
 \begin{figure} [tpb]
 \centering
          \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/rapidity.png}
          \vspace*{10mm}
-         \caption[#CMS Rapidity distribution]{This Figure shows one quadrant of CMS in the $r-z$ plane adapted from \cite{lee:rapidity}, illustrating the positions of subsystems in barrel and endcap regions}
+         \caption[CMS Rapidity distribution]{This Figure shows one quadrant of CMS in the $r$-$z$ plane adapted from \citep{lee:rapidity}, illustrating the positions of subsystems in barrel and endcap regions}
          \label{cms:rapidity}
 \end{figure}
 
 
 \subsection{Silicon Tracking Detector}
+Tracking the paths of the particles produced after proton-proton collision inside CMS is of crucial importance. The tracking information from the silicon tracking detector is used to accurately reconstruct the momenta of particles such as electrons, muons or particle jets (collimated sprays of particles initiated by quarks and gluons), mitigate the effect of many overlapping proton-proton collisions (“pileup”), or correctly measure missing momentum. As the charged particles traverse the silicon sensor they create electron-hole pairs, which in the presence of an applied voltage is measured as current. 
+
+The magnetic field is responsible for bending the charged particles, the higher the bending smaller is the momenta associated with the particles. The CMS Tracker is located inside the magnetic solenoid and is composed of two sub-systems namely, the pixel and the strip, illustrated in Figure \ref{cms:tracker} and elaborated in the following sections.
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/tracker.png}
+         \vspace*{10mm}
+         \caption[CMS Tracker r-z plane]{This Figure shows schematic of the upper half of the CMS Tracker in the $r$-$z$ plane adapted from \citep{Vormwald2016TheCI:tracker}, illustrating the positions of the pixel (red) and strip (blue).}
+         \label{cms:tracker}
+\end{figure}
+
+\subsubsection{Pixel}
+The Pixel sub-system is located in the high particle density region ($r<20 cm$). Being very close to the nominal proton-proton interaction point the pixel detector is exposed to most radiation. Dynamic inefficiencies like decreasing hit efficiency with increasing instantaneous luminosity, increased fake rates, reduced resolution in the inner layers as Pile up (PU) increased in the LHC, were some of the reasons which lead to the Phase I upgrade of the pixel detector. In this thesis we perform analysis of the data from all Run II years (2016, 2017, 2018) so, here we describe both the 2016 (Pixel Phase 0) and 2017/2018 (Pixel Phase I) detectors. Figure  \ref{cms:pixel} shows the layout of the 2016 (Phase 0) and 2017/2018 (Phase I) pixel detector and the geometry of the upgraded barrel layers (BPIX) and forward/backward disks (FPIX) detectors.
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/pixel_comaprision.png}
+         \vspace*{10mm}
+         \caption[CMS Pixel Phase 0 and Phase 1 comparison]{[Top] This Figure shows the comparison of the CMS pixel detector in Phase 0 (below center) with 3 barrel layers, 2 endcap disks and Phase 1 with 4 barrel layers, 6 endcap disks, adapted from \citep{Sakuma_2014:pixel}. [Bottom Left] figure shows the 3-D representation of 2016 (Phase 0) with 3 barrel layers and 2017/2018 (Phase 1) with 4 barrel layers. [Bottom Right] 3D placement of the inner and outer rings.}
+         \label{cms:pixel}
+\end{figure}
+The 2016 (Phase 0) pixel \cite{CMS:2012pixel} consisted of three barrel layers (BPIX) at radii of \SI{4.4}{\cm}, \SI{7.3}{\cm} and \SI{10.2}{\cm}, and two forward/backward disks (FPIX) at longitudinal positions of $\pm$\SI{34.5}{\cm} and $\pm$\SI{46.5}{\cm} and extending in radius from about \SI{6}{\cm} to \SI{15}{\cm}. The BPIX consists of 48 million pixels covering a total area of \SI{0.78}{\meter\squared} and the FPIX has 18 million pixels covering an area of \SI{0.28}{\meter\squared}. These pixels produce a minimum of 3 independent hits along the paths of the charged particles with single hit resolutions between \SI{10}-\SI{20}{\micro\meter}.
+
+The 2017 (Phase I) pixel \cite{Kumar2015NearFU:pixel} added an additional layer to the barrel layer and additional 4 layers to the endcap region. The layers in barrel region are arranged at radii of \SI{2.9}{\cm}, \SI{6.8}{\cm}, \SI{10.9}{\cm} and \SI{16}{\cm}. The innermost layer is made closer to the interaction point by reducing the radius of the beam pipe. The endcap region consisting of 6  layers is organized into three disks with two layers each at a distance of $\pm$\SI{29.1}{\cm}, $\pm$\SI{39.6}{\cm} and $\pm$\SI{51.6}{\cm} from the origin along the z-axis. The number of pixels in BPIX increased from 48 million to 79 million and in the FPIX region, from 18 million to 45 million covering a total area of \SI{2}{\meter\squared}. The updated tracker allows the CMS to record a minimum of 4 independent hits per track, increasing the efficiency of track reconstruction, reduced fake rates, enhanced resolution of the momentum and impact parameter at high PU.
+
+As shown in Figure \ref{cms:pixel_sensor} the silicon sensor is composed of many layers stacked together. Each pixel unit on the sensor is bump bonded to the read-out channel on the readout-chip (ROC). These bump bonds create an electrical connection between the pixel and the readout channel on the chip. The ROC is connected via wire-bonds to the high density interconnect (HDI) for carrying the signal to the front-end electronics. The pixel sensors in the barrel are $n-on-n$ semi-conductors of size \SI{100}{\micro\meter} $\times$ \SI{150}{\micro\meter}, giving a spatial resolution of \SI{15}{\micro\meter}-\SI{20}{\micro\meter}. There are 4,160 pixels per sensor and 16 sensors per module.
+
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/pixel_sensor.png}
+         \vspace*{10mm}
+         \caption[CMS Tracker r-z plane]{}
+         \label{cms:pixel_sensor}
+\end{figure}
+\subsubsection{Strip Tracker}
+hdgsdahdjkhjkf
+jkdshkhklsd
+jkdkshlf
 
 \subsection{Electromagnetic Calorimeter}
 
@@ -94,10 +134,8 @@ The rapidity is invariant under Lorentz boost transformations and is only depend
 
 \subsection{Muon System}
 
-\subsubsection{DT}
+\subsection{Trigger and Data Acquisition System}
 
-\subsubsection{RPC}
+\subsection{LHC Computing Grid}
 
-\subsubsection{CSC}
-
-\subsection{Trigger System}
+\subsection{CMS Data Quality Monitoring System}
