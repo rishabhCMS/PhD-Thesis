@@ -48,7 +48,7 @@ The CMS detector can detect 5 general categories of particles as shown in the fi
 \end{figure}
 %More ideas that really make this a great paper. Maybe a footnote or two.\footnote{Some peripheral thoughts that belong in a note.}
 \subsection{Coordinate System}
-The definition of a coordinate system is very crucial in quantifying the position of a particle inside CMS with respect to the origin. The coordinate system at CMS is defined as follows and illustrated in Figure \ref{cms:coordinate} -- the origin is defined as the nominal pp collision point,  the  $x$-axis points inwards towards the center of the LHC ring, the $y$-axis points upwards perpendicular to the $x$-axis and the $z$-axis points in the counter-clockwise beam direction. However, in hadron collider physics a more traditional coordinate, pseudo-rapidity $\eta$ is used, defined as
+The definition of a coordinate system is very crucial in quantifying the position of a particle inside CMS with respect to the origin. CMS uses a right-handed coordinate system defined as follows and illustrated in Figure \ref{cms:coordinate} -- the origin is defined as the nominal pp collision point,  the  $x$-axis points inwards towards the center of the LHC ring, the $y$-axis points upwards perpendicular to the $x$-axis and the $z$-axis points in the counter-clockwise beam direction. However, in hadron collider physics a more traditional coordinate, pseudo-rapidity $\eta$ is used, defined as
 
 \begin{equation}
   \eta = -\ln\tan\left(\frac{\theta}{2}\right)
@@ -118,17 +118,19 @@ As shown in Figure \ref{cms:pixel_sensor} the silicon sensor is composed of many
 \centering
          \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/pixel_sensor.png}
          \vspace*{10mm}
-         \caption[CMS Tracker r-z plane]{}
+         \caption[CMS Pixel sensor module]{[Left] signal read-out mechanism in a typical CMS silicon sensor. [Right] Anatomy of a silicon sensor showing distinct components like silicon bulk, ROC and bump bonds with dimensions.}
          \label{cms:pixel_sensor}
 \end{figure}
 \subsubsection{Strip Tracker}
-hdgsdahdjkhjkf
-jkdshkhklsd
-jkdkshlf
+The Silicon Strip Tracker (SST) surrounds the Pixel detector \cite{AGRAM2012844:strip}, the SST consists of a total of 10 layers distributed in two barrels, Tracker Inner Barrel (TIB) and Tracker Outer Barrel (TOB). The barrels are enclosed by wheels grouped into 4 parts, two Tracker Inner Disks (TIDs) with three wheels per side, two Tracker End Caps (TECs) with nine wheels per side. The SST has a diameter of \SI{2.4}{\meter} and a length of \SI{5}{\meter}. with an active area of \SI{198}{\meter\squared} distributed across 24,244 sensors it is the biggest silicon detector to be built. Figure \ref{cms:tracker} illustrates the layout of the strips.
 
 \subsection{Electromagnetic Calorimeter}
+The electromagnetic Calorimeter (ECAL) is a homogeneous and hermetic detector which measures the energy of the electromagnetically interacting particles like photons, electrons and positrons. It consists of two main components- The barrel region composed of 61,200 lead tungstate ($PbWO_{4}$) crystals covering the region in $|\eta| < 1.479$, and the two endcap regions composed of 14,648 crystals covering the region $1.479 < |\eta|  < 3$. 
+The choice of $PbWO_{4}$ crystals is motivated by the following reasons. Its short radiation length, small $Moli\acute{e}re$ (\SI{2.19}{\cm})and high density (\SI{8.27}{\g\cm^{3}}) results in high energy resolution. It's a fast scintillator (meaning 80$\%$ of the scintillation light is emitted within 25 $ns$ of the particle's incidence on the crystal. It is easy to produce these $PbWO_{4}$ crystals with readily available raw materials \citep{CMS:1997ecal}.
 
+When an Electron/Photon traverses the ECAL crystals, it results in a cascade of electromagnetic interactions, producing a shower of particles such that the sum of there energy is proportional to the energy of the incident particle. Inside the ECAL these particles release photons which are detected by the photo-detectors at the end of the crystals
 \subsection{Hadronic Calorimeter}
+
 
 \subsection{Solenoid Magnet}
 
