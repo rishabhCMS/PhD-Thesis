@@ -65,12 +65,12 @@ The definition of a coordinate system is very crucial in quantifying the positio
 
 For a particle of three-momentum $\textbf{p}$ with $z$-component $p_z$, pseudorapidity can be written as
 \begin{equation}
-  \eta = \frac12\ln\left(\frac{|\textbf{p}|+p_z}{|\textbf{p}|-p_z}\right)
+  \eta = \frac{1}{2}\ln\left(\frac{|\textbf{p}|+p_z}{|\textbf{p}|-p_z}\right)
   \label{eq:eta_p}
 \end{equation}
 In the limit of relativistic particles (high velocity and low mass limit), the pseudo-rapidity approximates the rapidity y given by
 \begin{equation}
-  y = \frac12\ln\left(\frac{E+p_z}{E-p_z}\right),
+  y = \frac{1}{2}\ln\left(\frac{E+p_z}{E-p_z}\right),
   \label{eq:rap}
 \end{equation}
 The rapidity is invariant under Lorentz boost transformations and is only dependent on the polar angle $\theta$ and not on the energy of the particle. From Figure \ref{cms:rapidity}, we see that higher values of $\eta$ correspond to low values of $\theta$, this region is also referred as "forward" or high $\eta$ regions. In Figure \ref{cms:rapidity}, we observe two regions which cover approximately  $|\eta| < 1.2$ and $1.2 <|\eta|  < 3$, these regions are known as the barrel and the endcap respectively.
@@ -125,10 +125,41 @@ As shown in Figure \ref{cms:pixel_sensor} the silicon sensor is composed of many
 The Silicon Strip Tracker (SST) surrounds the Pixel detector \cite{AGRAM2012844:strip}, the SST consists of a total of 10 layers distributed in two barrels, Tracker Inner Barrel (TIB) and Tracker Outer Barrel (TOB). The barrels are enclosed by wheels grouped into 4 parts, two Tracker Inner Disks (TIDs) with three wheels per side, two Tracker End Caps (TECs) with nine wheels per side. The SST has a diameter of \SI{2.4}{\meter} and a length of \SI{5}{\meter}. with an active area of \SI{198}{\meter\squared} distributed across 24,244 sensors it is the biggest silicon detector to be built. Figure \ref{cms:tracker} illustrates the layout of the strips.
 
 \subsection{Electromagnetic Calorimeter}
-The electromagnetic Calorimeter (ECAL) is a homogeneous and hermetic detector which measures the energy of the electromagnetically interacting particles like photons, electrons and positrons. It consists of two main components- The barrel region composed of 61,200 lead tungstate ($PbWO_{4}$) crystals covering the region in $|\eta| < 1.479$, and the two endcap regions composed of 14,648 crystals covering the region $1.479 < |\eta|  < 3$. 
-The choice of $PbWO_{4}$ crystals is motivated by the following reasons. Its short radiation length, small $Moli\acute{e}re$ (\SI{2.19}{\cm})and high density (\SI{8.27}{\g\cm^{3}}) results in high energy resolution. It's a fast scintillator (meaning 80$\%$ of the scintillation light is emitted within 25 $ns$ of the particle's incidence on the crystal. It is easy to produce these $PbWO_{4}$ crystals with readily available raw materials \citep{CMS:1997ecal}.
+The electromagnetic Calorimeter (ECAL) \cite{Chatrchyan:cms_detetectors} is a homogeneous and hermetic detector which measures the energy of the electromagnetically interacting particles like photons, electrons and positrons. It consists of two main components as shown in Figure \ref{cms:ecal_schema}- the barrel region composed of 61,200 lead tungstate ($PbWO_{4}$) crystals covering the region in $|\eta| < 1.479$, and the two endcap regions composed of 14,648 crystals covering the region $1.479 < |\eta|  < 3$. Avalanche photodiodes (APDs) are used in the barrel region and vacuum phototriodes (VPTs) are used in the endcap region. One of the main motivations in the design of the ECAL was its capability to detect two photons coming from the Higgs boson decay. This capability is enhanced by the good energy resolution of the ECAL.
 
-When an Electron/Photon traverses the ECAL crystals, it results in a cascade of electromagnetic interactions, producing a shower of particles such that the sum of there energy is proportional to the energy of the incident particle. Inside the ECAL these particles release photons which are detected by the photo-detectors at the end of the crystals
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/ecal_schema.png}
+         \vspace*{10mm}
+         \caption[CMS ECAL schema]{Schematic represntation of the CMS ECAL components adapted from \cite{Chatrchyan:cms_detetectors}}
+         \label{cms:ecal_schema}
+\end{figure}
+
+The choice of $PbWO_{4}$ crystals is motivated by the following reasons. Its short radiation length (\SI{0.89}{\cm}), small $Moli\acute{e}re$ (\SI{2.19}{\cm})and high density (\SI{8.27}{\g\cm^{-3}}) results in high resolution and compactness of ECAL. It's a fast scintillator (meaning 80$\%$ of the scintillation light is emitted within 25 $ns$ of the particle's incidence on the crystal). The $PbWO_{4}$ crystals in the endcap have a truncated pyramidal shape which makes the light collection non-uniform along the crystal length. This non-uniformity is corrected by depolishing one of the lateral face of the crystal as shown in figure \ref{cms:ecal_crystal}.
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/ecal_crsytal.png}
+         \vspace*{10mm}
+         \caption[CMS ECAL crystal]{$PbWO_{4}$ crystals with photodetectors attached.  Left panel:  A barrel crystal with the upper face depolished and the APD capsule.  In the insert, a capsule with the two APDs. Right panel: An endcap crystal and VPT}
+         \label{cms:ecal_crystal}
+\end{figure}
+
+When an electron/photon traverses the ECAL crystals, it results in a cascade of electromagnetic interactions, producing a shower of particles such that the sum of there energy is proportional to the energy of the incident particle. Inside the ECAL these particles release photons which are detected by the photo-detectors at the end of the crystals. APDs (with an active area of \SI{5 x 5}{\mm}) in the barrel (two APDs per crystal) and VPTs (with an active area of \SI{280}{\mm\squared}) in the endcap (one VPT per crystal) glues at the back of the crystal as shown in Figure \ref{cms:ecal_crystal}.
+
+The energy resolution for particles with energy below 500 GeV, the shower leakage from the rear of the calorimeter becomes significant. It is parametrized in \ref{eq:ecal_res}
+\begin{equation}
+\left(\frac{\sigma}{E}\right)^{2} = \left(\frac{S}{\sqrt{E}}\right)^{2} + \left(\frac{N}{E}\right)^{2} + C^{2},
+  %\eta = -\ln\tan\left(\frac{\theta}{2}\right)
+  \label{eq:ecal_res}
+\end{equation}
+where S is the stochastic term, N the noise term and C the constant term. The contribution to the stochastic term is mainly due to event-to-event fluctuations and pre-shower energy deposit fluctuations. The contribution to the noise term is due to electronics and pileup noise. Finally, the constant term is due to the non-uniform longitudinal light collection. The experimental values of these parameters were found to be 2.8\%, 0.12\% and 0.30\% for the first, second and third terms respectively. See \ref{eq:ecal_res_exp}
+
+\begin{equation}
+\left(\frac{\sigma}{E}\right)^{2} = \left(\frac{2.8\%}{\sqrt{E}}\right)^{2} + \left(\frac{0.12\%}{E}\right)^{2} + \left(0.30\%\right)^{2},
+  %\eta = -\ln\tan\left(\frac{\theta}{2}\right)
+  \label{eq:ecal_res_exp}
+\end{equation}
 \subsection{Hadronic Calorimeter}
 
 
@@ -139,5 +170,3 @@ When an Electron/Photon traverses the ECAL crystals, it results in a cascade of 
 \subsection{Trigger and Data Acquisition System}
 
 \subsection{LHC Computing Grid}
-
-\subsection{CMS Data Quality Monitoring System}
