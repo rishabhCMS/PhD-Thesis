@@ -161,7 +161,19 @@ where S is the stochastic term, N the noise term and C the constant term. The co
   \label{eq:ecal_res_exp}
 \end{equation}
 \subsection{Hadronic Calorimeter}
+The hadronic calorimter (HCAL) \cite{Freeman:hcal} is located outside the ECAL, it is responsible for the measurement of the hadronic jets, and neutrinos or exotic particles resulting in apparent missing transverse energy. The hadronic jets are initiated by the charged and neutral hadron particles like kaons, pions and baryons.
 
+HCAL is sampling calorimeter. It finds a particle’s position, energy and arrival time using alternating layers of brass absorbers and tiles of plastic scintillator. When a hadronic particle hits the brass absorber layer it results in the production of many secondary particles. These secondary particles further interact with the absorber layer to create shower of particles. As this shower develops, the particles pass through the alternating layers of active scintillation material causing them to emit blue-violet light. Unlike ECAL, the particles are not absorbed in the scintillator hence the energy of the particles is sampled; therefore the total energy of the hadrons is not measured but estimated from energy clusters resulting in low resolution of the detector. 
+
+The HCAL is organized into 4 sections in a longitudinal view as shown in Figure \ref{cms:hcal}. It consists of hadron barrel (HB), hadron outer (HO), hadron endcap (HE) and hadron forward (HF). HB covers $|\eta| < 1.4$ region. HE covers a substantial portions in the rapidity range $1.3 < |\eta| < 3$, this region receives around 34\% of the particles produced in the final state. In the central pseudorapidity region, the combined stopping power of EB plus HB does not provide sufficient containment for hadron showers. So, HO is placed outside the solenoid to cover the $|\eta| < 1.3$ region and measure the energy tails of the particles passing the HB and the magnet. The HF, made of quartz fiber scintillator and steel as absorption material, covers  the forward region $3.0 < |\eta| < 5.2$. 
+
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/hcal.png}
+         \vspace*{10mm}
+         \caption[CMS ECAL crystal]{Layout of CMS’s hadronic calorimeter. All components are shown in this r-z projection. The coverage of the hadronic calorimeter is roughly $|\eta| < 4$. The dashed lines are at fixed $\eta$ values}
+         \label{cms:hcal}
+\end{figure}
 
 \subsection{Solenoid Magnet}
 
