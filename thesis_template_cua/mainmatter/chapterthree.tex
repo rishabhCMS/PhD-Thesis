@@ -6,6 +6,20 @@ The Large Hadron Collider (LHC) is the world’s largest and most powerful parti
 
 At the LHC two energetic proton beams travel in opposite directions in separate beam pipes. The proton beams travel in bunches separated by 25 ns in time. The beams travel at relativistic speeds and collide at four major interaction points at the LHC. The LHC has four main detector experiments at each interaction point: ALICE (A Large Ion Collider Experiment), ATLAS (A Toroidal LHC Apparatus), CMS (Compact Muon Solenoid), and LHCb (Large Hadron Collider beauty). ATLAS and CMS are general purpose-detectors with broad physics objectives ranging from studying the Standard Model to searching Beyond Standard Model (BSM) physics such as Dark Matter. While ALICE and LHCb are more physics dedicated detectors, ALICE and LHCb are dedicated to heavy-ion physics and studying b-quark physics respectively.
 \subsection{LHC Computing Grid}
+LHC produces data at a tremendous rate such that even after filtering 99\% of the data, it stores around 88 Petabytes (PB) of data. This data must be stored and made easily accessible to physicists located all over the world. The Worldwide LHC computing grid (WLCG)  \cite{Molina:2014sia_wlcg} is responsible for providing resources for storage, distribution for easy data retrieval and analysis of the data collected by the LHC. It combines over 900,000 PB of computing cores from over 170 locations in 42 countries making it the world's largest distributed computing grid. It provides infrastructure which serves the need of around 12,000 physicists by providing real time data access and processing power. During Run II, LHC recorded  0-8 Gb/s, with a global data transfer rate of 60 Gb/s.  
+
+There are four main technical components which describe the structure of the WLCG. 1.) Excellent \textbf{connectivity and networking} infrastructure allowing the WLCG to initiate data distribution to hundreds of collaborating institutes. 2.) Each grid center manages a large collection of computer \textbf{hardware and storage} systems. 3. \textbf{Middle-ware} which act as a mediator between the operating systems of the computers and physics application software. 4.) To analyze the data from the LHC and to be able to extract relevant physics information, custom \textbf{physics analysis based software} are needed. 
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/WLCG-Tiers.png}
+         \vspace*{10mm}
+         \caption[WLCG Tier Distribution]{ This figure adapted from \citep{Donno:wlcg} illustrates the 4 layers which compose the WLCG (Tier-0,1,2,3). Tier-0 is the CERN Data Center shown at the center. The green area shows the Tier-1 and outer blue region shows the 160 Tier-2 sites.}
+         \label{cms:wlcg}
+\end{figure}
+
+Physically WLCG consists of four layers based on the functionality and computing resources see Figure \ref{cms:wlcg}. Tier-0 is based at CERN in Geneva, Switzerland. It is responsible for the safe-keeping of the raw data (first copy), first pass reconstruction of the raw data into meaningful information. It distributes the raw data and reconstruction output to the Tier-1s, and reprocessing of data when the LHC is not running.Tier-1 consists of 13 large computer centers responsible for the safe-keeping of a proportional share of raw and reconstructed data, large-scale reprocessing and safe-keeping of corresponding output, distribution of data to Tier 2s and safe-keeping of a share of simulated data produced at these Tier 2s. Tier-2 usually provide facility to store sufficient data computing resources depending on specific analyses needs. Tier-3 are local small computing and storage facilities forming local clusters for accessing WLCG Tiers-0,1,2.
+
+
 %\begin{quotation}
 %    \noindent Here is a block quotation---a passage from a text you found insightful and wanted to share with others. Maybe it is from a %journal article, website, or book. Irrespective, it should support the argument being made.\footnote{A citation for the quoted material.}
 %\end{quotation}
@@ -181,4 +195,4 @@ The HCAL is organized into 4 sections in a longitudinal view as shown in Figure 
 
 \subsection{Trigger and Data Acquisition System}
 
-\subsection{LHC Computing Grid}
+
