@@ -13,7 +13,7 @@ Great thoughts that further your argument. This includes lots of strong evidence
 
 \section{The Top quark}
 
-The top quark was discovered the Fermilab Tevatron almost 25 years ago. It is the weak isospin partner of the bottom quark. Its discovery resulted in completion of the three generation structure of the standard model (SM). The top quark mass was measured to be $m_{t} = 176 \pm 13$ GeV, a charge of 2/3 times the charge on the electron and a lifetime of $5 \times 10^{-25} s$ making it the heaviest of all the fermions known till date in the standard model. Because of it's large mass and correspondingly short lifetime it behaves differently than other quarks. 
+The top quark was discovered at the Fermilab Tevatron almost 25 years ago. It is the weak isospin partner of the bottom quark. Its discovery resulted in completion of the three generation structure of the standard model (SM). The top quark mass was measured to be $m_{t} = 176 \pm 13$ GeV, a charge of 2/3 times the charge on the electron and a lifetime of $5 \times 10^{-25} s$ making it the heaviest of all the fermions known till date in the standard model. Because of it's large mass and correspondingly short lifetime it behaves differently than other quarks. 
 
 The top quark decays before it hadronizes, passing its information to the decay products. Therefore making it possible to infer its properties from the decay products in the detector. The top quark decays into a a bottom quark and a W boson, and since the W boson is an unstable particle it decays into a quark anti-quark pair of different flavors (hadronic decay channel) or to a charged lepton and a neutrino (leptonic decay channel) with the following branching ratios.
 
@@ -80,7 +80,7 @@ $p p \rightarrow $$t + \cancel{\it{E}}_{T} \rightarrow b W + \cancel{\it{E}}_{T}
 
 $p p \rightarrow $$t + \cancel{\it{E}}_{T} \rightarrow b W + \cancel{\it{E}}_{T} \rightarrow b j j + \cancel{\it{E}}_{T}$ (Hadronic decay mode)
 
-In this thesis we will be using the leptonic channel for the search of dark matter candidates. Next section will include a detailed discussion on the about the vector and scalar invisible bosons.
+In this thesis we will be using the leptonic channel for the search of dark matter candidates. Next section will include a detailed discussion about the vector and scalar invisible bosons.
 
 \subsection{Spin 0 mediator}
 
@@ -91,3 +91,28 @@ In this thesis we will be using the leptonic channel for the search of dark matt
 
 
 \subsection{b-tagging and Deep Jet}
+
+
+\section{Statistical Analysis Procedure}
+
+\subsection{Fundamental Concepts}
+
+Statistics plays a key role in particle physics. The CMS experiment collects data and this data is used either to make an inference about the probabilistic model (searching for a new phenomena) or to estimate the parameters of the model (precise measurements of a parameter of the SM, ex: the mass of the top quark). Such a statistical inference uses two main methods, first, the frequentist method which estimates the probability of an outcome by measuring the frequency of the outcome in a repeatable experiment. However one thing to note is that the frequentist method does not give the probability for a hypothesis or for the value of the parameter. The probability P(X) of an outcome X is defined as 
+
+\begin{equation}
+P(X) = \frac{\#\; of\; favorable\; outcomes}{\# \;of\; total\; possible\; outcomes}
+  %\eta = -\ln\tan\left(\frac{\theta}{2}\right)
+  \label{eq:frequentist}
+\end{equation}
+
+Second, the bayesian inference, it expresses one's degree of belief, for instance given a probability distribution function for a parameter, $f(x;\theta)$ we can express our degree of belief about the possible value that parameter can have. Bayesian inference is more like a subjective probability, it requires prior knowledge about the values that the parameter possesses before the experiment. With the usage of Bayes' theorem one can estimate the posterior probability of the parameter having a particular value.
+
+\begin{equation}
+P(Y|X) = \frac{P(X|Y)\; P(Y)}{P(X)}
+  %\eta = -\ln\tan\left(\frac{\theta}{2}\right)
+  \label{eq:Bayesian}
+\end{equation}
+
+In Eq \ref{eq:Bayesian},$P(Y|X)$ represents the probability of occurrence of Y under the assumption that X has happened and vice versa for $P(X|Y)$, $P(X)$ and $P(Y)$ are
+called priors and represent the general probabilities for the outcome X and Y
+
