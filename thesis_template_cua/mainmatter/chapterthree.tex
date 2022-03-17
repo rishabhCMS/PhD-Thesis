@@ -218,16 +218,19 @@ The Muon system consists of three sub-detectors- 250 drift tubes (DTs), 540 cath
          \label{cms:muon_system}
 \end{figure}
 
-The DTs measure the muon position in the barrel part of the detector in the $|\eta| < 1.2$ region. They consist of 4 barrel layers parallel to the beam axis placed alternatively between the return yolk layers of the magnet. Each DT layer is formed by a 4 cm wide Aluminum tube containing a stretched  wire in a gas volume. The wire is maintained at a potential difference, this potential difference creates an electric field which attracts the ionized gas atoms. When a muon passes the DT it ionizes the gas atoms these atoms drift in the presence of electric field to the wires and the signal produced by there ionized atoms acts as a proxy for the muons. This mechanism is illustrated in Figure \ref{cms:dt}
+The DTs \cite{Chatrchyan:cms_detetectors} measure the muon position in the barrel part of the detector in the $|\eta| < 1.2$ region. They consist of 4 barrel layers parallel to the beam axis placed alternatively between the return yolk layers of the magnet. Each DT layer is formed by a 4 cm wide Aluminum tube containing a stretched  wire in a gas volume. The wire is maintained at a potential difference, this potential difference creates an electric field which attracts the electrons from the ionized gas atoms. When a muon passes the DT it ionizes the gas atoms producing electrons, these electrons drift in the presence of electric field towards the wires and the signal produced by these electrons acts as a proxy for the muons. This mechanism is illustrated in Figure \ref{cms:dtrpccsc}
 
 \begin{figure} [tpb]
 \centering
-         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/dt.png}
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/dtcscrpc.png}
          \vspace*{10mm}
-         \caption[CMS Muon System]{Diagram showing the mechanism of passing muons through DT ionizes the gas atoms. These gas atoms move in the presence of electric field thus producing a signal for the presence of muons}
-         \label{cms:dt}
+         \caption[CMS Muon System]{Top left diagram shows the mechanism of passing muons through DT ionizes the gas atoms producing electrons. These electrons move in the presence of electric field thus producing a signal for the presence of muons.}
+         \label{cms:dtrpccsc}
 \end{figure}
 
+The cathode strip chambers are used in end-caps covering a region of $0.9 < |\eta| < 2.4$ which corresponds to the region of uneven magnetic field and high particle rates. CSCs provide precise space and time information about the presence of muons. CSCs consist of arrays of positively charged wires crossed with negatively charged copper cathode strips within a gas volume oriented perpendicular to each other. When muons pass through, they ionize the gas atoms and produce electrons, which travel to the anode wires creating an avalanche of electrons. Positive ions move away from the wire and towards the copper cathode, also inducing a charge pulse in the strips, at right angles to the wire direction. Since the strips and the wires are perpendicular to each other, we get two position coordinates for each passing muon.This mechanism is illustrated in bottom plot of Figure \ref{cms:dtrpccsc}
+
+The RPC chambers are fitted between alternating layers of DT and CSC layers, they prove a fast measurement of the muon momentum used to trigger event selection. The RPCs also use the same mechanism as the CSC and DT and combine a good spatial resolution with the time resolution of one nanosecond. The mechanism is illustrated in right diagram Figure \ref{cms:dtrpccsc}
 
 \subsection{Trigger and Data Acquisition System}
 
