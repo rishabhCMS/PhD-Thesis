@@ -233,5 +233,27 @@ The cathode strip chambers are used in end-caps covering a region of $0.9 < |\et
 The RPC chambers are fitted between alternating layers of DT and CSC layers, they prove a fast measurement of the muon momentum used to trigger event selection. The RPCs also use the same mechanism as the CSC and DT and combine a good spatial resolution with the time resolution of one nanosecond. The mechanism is illustrated in right diagram Figure \ref{cms:dtrpccsc}
 
 \subsection{Trigger and Data Acquisition System}
+On an average there are 40 Million collisions per second or to say 40 Million events every second. While the size of 1 Event is around 1 MB. Doing some quick math tells us that we’ll be producing 40 TB of data every second (40 TB/s). That is an insane amount of data bandwidths. Given the detector is running for several days without stops would produce an unprecedented amount of data. While not all data are interesting and limitations imposed by storage and data transfer bandwidths, we need a trigger system which selects events which may contain some new physics information and discard other non-interesting events.
+CMS has a very advanced trigger system to select and store these events from the pp collisions at the LHC. This system has two layers, a hardware-based Level-1 trigger and a software-based High-level trigger \cite{ch3:trigg}.
+
+\subsection{Level-1 trigger}
+The Level-1 (L1) trigger is a fast hardware trigger that makes a decision to accept or
+reject an event in less than 4 $\mu$s. This system uses coarse information from a subset of
+CMS detectors: ECAL, HCAL, and the muon chambers. The result of the L1 trigger
+is distributed to all CMS detectors and an accept decision triggers the readout of all
+55 million channels. The L1 trigger system reduces the event rate from40 MHz to a more acceptable bandwidth of 100 kHz.
+\begin{figure} [tpb]
+\centering
+         \includegraphics[width=0.9\textwidth,clip=]{thesis_template_cua/Figures/CMS_LHC_chapter/L1-trig.png}
+         \vspace*{10mm}
+         \caption[CMS Muon System]{CMS’s L1 trigger system \citep{ch3:trigg}. The main data processed by the lower-level trigger are calorimeter and muon information only since it must be very fast.}
+         \label{cms:L1}
+\end{figure}
 
 
+Figure \ref{cms:L1} shows how organization of the L1 trigger system. The energy information from the calorimeters and the hit information from the muon chambers is processed in first. Here the regional information from the calorimeters is used to construct photon/electron candidates using the energy deposit measurements. These objects are then passed to the global calorimeter trigger where clusters of energy are grouped into jets and identification of electrons and photons. These objects are then passed to the global trigger where the final decision is taken by combining the information from the muon system.
+
+Similary, the muon chamber hits are reconstructed as muon paths using several processing algorithms. The hit segments are combined to form tracks using the track-finding algorithm. Results from all the muon detectors are combined into the global muon trigger. Finally, the global trigger combines the information from the global muon and calorimeter triggers to make a global accept/reject decision on an event.
+
+\subsection{High-level trigger}
+It is a software based trigger which uses very sophisticated algorithms to produce an output rate of 100 Hz from an input of 100 KHz, amounting to a reduction factor of 1000. It uses the entire information available from the detector from tracking to reconstruction to identification and apply a selection criteria on the events. HLT then communicates its decision to the Event Filter Farm (13,000 processors) to tell them which event passed the HLT criteria. The HLT has a menu of trigger paths that is configurable at runtime. A trigger path is a set of filters on several physics objects that the event must satisfy. If an event passes at least one full trigger path, it is stored permanently for offline reconstruction.
