@@ -2,7 +2,7 @@
 \label{chapter:three}
 \section{The Large Hadron Collider}
 
-The Large Hadron Collider (LHC) is the world’s largest and most powerful particle accelerator. Inside the accelerator, two highly energetic proton beams collide up to a center-of-mass energy of 14 TeV. The LHC is constructed inside a 27 km tunnel, 100 m under the ground, located partly in Switzerland and France.
+The Large Hadron Collider (LHC) \cite{LHC} is the world’s largest and most powerful particle accelerator. Inside the accelerator, two highly energetic proton beams collide up to a center-of-mass energy of 14 TeV. The LHC is constructed inside a 27 km tunnel, 100 m under the ground, located partly in Switzerland and France.
 
 At the LHC two energetic proton beams travel in opposite directions in separate beam pipes. The proton beams travel in bunches separated by 25 ns in time. The beams travel at relativistic speeds and collide at four major interaction points at the LHC. The LHC has four main detector experiments at each interaction point: ALICE (A Large Ion Collider Experiment), ATLAS (A Toroidal LHC Apparatus), CMS (Compact Muon Solenoid), and LHCb (Large Hadron Collider beauty). ATLAS and CMS are general purpose-detectors with broad physics objectives ranging from studying the Standard Model to searching Beyond Standard Model (BSM) physics such as Dark Matter. While ALICE and LHCb are more physics dedicated detectors, ALICE and LHCb are dedicated to heavy-ion physics and studying b-quark physics respectively.
 \subsection{LHC Computing Grid}
@@ -236,7 +236,7 @@ The RPC chambers are fitted between alternating layers of DT and CSC layers, the
 On an average there are 40 Million collisions per second or to say 40 Million events every second. While the size of 1 Event is around 1 MB. Doing some quick math tells us that we’ll be producing 40 TB of data every second (40 TB/s). That is an insane amount of data bandwidths. Given the detector is running for several days without stops would produce an unprecedented amount of data. While not all data are interesting and limitations imposed by storage and data transfer bandwidths, we need a trigger system which selects events which may contain some new physics information and discard other non-interesting events.
 CMS has a very advanced trigger system to select and store these events from the pp collisions at the LHC. This system has two layers, a hardware-based Level-1 trigger and a software-based High-level trigger \cite{ch3:trigg}.
 
-\subsection{Level-1 trigger}
+\subsection{Level-1 trigger}\label{l1trigger}
 The Level-1 (L1) trigger is a fast hardware trigger that makes a decision to accept or
 reject an event in less than 4 $\mu$s. This system uses coarse information from a subset of
 CMS detectors: ECAL, HCAL, and the muon chambers. The result of the L1 trigger
@@ -255,5 +255,5 @@ Figure \ref{cms:L1} shows how organization of the L1 trigger system. The energy 
 
 Similary, the muon chamber hits are reconstructed as muon paths using several processing algorithms. The hit segments are combined to form tracks using the track-finding algorithm. Results from all the muon detectors are combined into the global muon trigger. Finally, the global trigger combines the information from the global muon and calorimeter triggers to make a global accept/reject decision on an event.
 
-\subsection{High-level trigger}
+\subsection{High-level trigger}\label{hlttrigger}
 It is a software based trigger which uses very sophisticated algorithms to produce an output rate of 100 Hz from an input of 100 KHz, amounting to a reduction factor of 1000. It uses the entire information available from the detector from tracking to reconstruction to identification and apply a selection criteria on the events. HLT then communicates its decision to the Event Filter Farm (13,000 processors) to tell them which event passed the HLT criteria. The HLT has a menu of trigger paths that is configurable at runtime. A trigger path is a set of filters on several physics objects that the event must satisfy. If an event passes at least one full trigger path, it is stored permanently for offline reconstruction.

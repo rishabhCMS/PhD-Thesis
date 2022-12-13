@@ -23,7 +23,8 @@
 % Adapted by Luiz F. G. dos Santos (2021/03/23)
 
 \documentclass[12pt]{turabian-thesis}
-
+\usepackage{graphicx}
+\usepackage{url}
 \usepackage{lipsum}
 \usepackage{blindtext}
 \usepackage{longtable}
@@ -52,7 +53,11 @@
 \usepackage{cancel}
 \setcounter{secnumdepth}{3}
 \setcounter{tocdepth}{2}
-
+\usepackage{dingbat}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
 \makeatletter
     \renewcommand*{\l@section}{%
         \ifnum \c@tocdepth >\z@ \vskip \tf@singlelineskip \fi

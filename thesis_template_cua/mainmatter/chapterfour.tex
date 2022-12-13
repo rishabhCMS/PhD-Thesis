@@ -19,7 +19,7 @@ The top quark decays before it hadronizes, passing its information to the decay 
 
 \begin{table}[h!]
   \centering
-  \caption{}
+  \caption{W boson decay modes}
   \label{tab:average_channels}
   \begin{tabular}{cc}
     \toprule
@@ -46,7 +46,7 @@ In accordance with the SM, at the LHC, top quarks are predominantly produced in 
          \label{theory:tree_level}
 \end{figure}
 
-\section{The Monotop Model}
+\section{The Monotop Model}\label{monotopmodel}
 This section details the theoretical motivation behind the monotop model \cite{monotoptheory:1}. The monotop model is based on an alternative approach  where a final state signature is proposed that no standard model process can reach at tree-level. The final state signature in our case is a top quark produced in association with missing transverse energy. In SM this production mode is suppressed both by a loop factor and by two powers of non-diagonal Cabibbo-Kobayashi-Maskawa matrix elements \cite{pham2011ckm:ckm}. In Figure \ref{theory:tree_level} we see that the left image shows the Standard model production of the monotop signature. The loop consisting of the W boson and two strange quarks allows for the production of Z boson and the top quark and if the Z boson decays into two neutrinos we get the monotop signature in accordance with rules of the Standard model. While the right image in Figure \ref{theory:tree_level} shows the tree-level production of the monotop signature. To allow for this tree-level production the monotop model suggests two main mechanisms \citep{monotoptheory:1}. Either the top quark is produced (resonantly or not) in association with missing energy of a fermionic nature or through a flavor-changing interaction with an invisible bosonic state, as illustrated on the left and right panels of Fig. \ref{theory:resonant}, respectively. This physics analysis utilizes the non-resonant monotop model so, we will discuss in detail about the flavor changing neutral interaction model (Non-Resonant model).
 
 \begin{figure} [tpb]
@@ -90,8 +90,8 @@ In this thesis we will be using the leptonic channel for the search of dark matt
 \subsection{Spin 1 mediator}
 
 
-\subsection{b-tagging and Deep Jet}
-
+\subsection{b-tagging and Deep Jet}\label{ch4:btagging}
+explain the working of deepJet algo and how it tags jets
 
 \section{Statistical Analysis Procedure}
 
@@ -104,6 +104,10 @@ P(X) = \frac{\#\; of\; favorable\; outcomes}{\# \;of\; total\; possible\; outcom
   %\eta = -\ln\tan\left(\frac{\theta}{2}\right)
   \label{eq:frequentist}
 \end{equation}
+% \begin{equation}
+% RelIso_{\mu}
+% = \frac{ChargedHadronIso + max(NeutralHadronIso + PhotonIso - 0.5 \times PUIso,0)}{p^{T}}  
+% \end{equation}
 
 Second, the bayesian inference, it expresses one's degree of belief, for instance given a probability distribution function for a parameter, $f(x;\theta)$ we can express our degree of belief about the possible value that parameter can have. Bayesian inference is more like a subjective probability, it requires prior knowledge about the values that the parameter possesses before the experiment. With the usage of Bayes' theorem one can estimate the posterior probability of the parameter having a particular value.
 
